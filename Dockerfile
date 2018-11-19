@@ -20,7 +20,8 @@ RUN apk add --no-cache \
         librsvg \
         libxpm \
         openssh-client \
-	python \
+        python \
+        ruby \
         tiff \
     && /bin/true
 
@@ -34,5 +35,7 @@ COPY .emacs.d /root/.emacs.d
 WORKDIR /root/.emacs.d
 RUN cask install
 
-CMD ["emacs"]
+WORKDIR /root/work
+
+CMD ["emacs", "."]
 
