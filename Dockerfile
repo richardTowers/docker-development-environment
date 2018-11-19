@@ -37,5 +37,6 @@ RUN cask install
 
 WORKDIR /root/work
 
-CMD ["emacs", "."]
+ENTRYPOINT ["emacs"]
+CMD ["."]
 
